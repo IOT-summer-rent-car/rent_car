@@ -17,7 +17,7 @@ public:
     Database() // 생성자
     {
         mysql_init(&conn);
-        connection = mysql_real_connect(&conn, "localhost", "root", "qwert123", "sys", 3306, NULL, 0);
+        connection = mysql_real_connect(&conn, "10.10.20.42", "admin", "admin1234", "test", 3306, NULL, 0);
         if (connection == NULL)
         {
             fprintf(stderr, "Failed to connect to databases: Error: %s\n",
@@ -56,3 +56,11 @@ public:
         mysql_free_result(sql_result);
     }
 };
+
+int main(void)
+{
+    Database db;
+    db.sendquery("select * from tourist");
+    db.playquery(8);
+    return 0;
+}
