@@ -1,6 +1,7 @@
 #include "database.h"
 #include "client.h"
 #include "vipclient.h"
+#include <string><
 using namespace std;
 
 void member::read_tourinfo_area() // 여행정보 지역이름으로 열람 및 예약
@@ -56,7 +57,7 @@ void member::read_tourinfo_beach() // 여행정보 해변명으로 열람 및 �
     string beach;
     cout << "해변명으로 여행정보 검색" << endl;
     cout << "해변명을 입력해주세요." << endl;
-    cin >> area;
+    cin >> beach;
     sprintf(query, "select count(*) from tourist where 해변명 like '%%%s%%'", beach.c_str()); // 입력한 해변명에 해당하는 정보가 있는지 검색
     send_query(query);
     sql_result = mysql_store_result(connection);
@@ -149,7 +150,7 @@ void member::sign_up() // 회원가입
     cout << "회원가입" << endl;
     cout << "아이디를 입력해주세요." << endl;
     cin >> id;
-    sprintf(query, "select count(*) from usertbl where id = '%s'", id.c_str()); // 유저테이블에서 해당하는 id가 있는지 검색
+    sprintf(query, "select count(*) from usertbl where id = '%s'", id); // 유저테이블에서 해당하는 id가 있는지 검색
     send_query(query);
     sql_result = mysql_store_result(connection);
     sql_row = mysql_fetch_row(sql_result);
@@ -165,7 +166,7 @@ void member::sign_up() // 회원가입
         cin >> name;
         cout << "전화번호를 입력해주세요." << endl;
         cin >> phone;
-        sprintf(query, "insert into usertbl(id, pw, name, phone, vip) values('%s', '%s', '%s', '%s', 'vip')", id.c_str(), pw.c_str(), name.c_str(), phone.c_str()); // 입력받은 정보로 유저테이블에 등록
+        sprintf(query, "insert into usertbl(id, pw, name, phone, vip) values('%s', '%s', '%s', '%s', 'vip')", id, pw, name, phone); // 입력받은 정보로 유저테이블에 등록
         send_query(query);
         cout << "회원가입이 완료되었습니다." << endl;
     }

@@ -2,7 +2,7 @@
 #define __DATABASE_H_
 #include "/usr/include/mysql/mysql.h"
 #include <iostream>
-#include <cstring>
+#include <string>
 using namespace std;
 
 class Database // 데이터베이스

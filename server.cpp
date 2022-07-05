@@ -20,7 +20,7 @@ void manage::read_member() // 준회원 정보 열람
         cout << "등록된 회원정보" << endl;
         while ((sql_row = mysql_fetch_row(sql_result)) != NULL) // 데이터를 모두 출력
         {
-            cout << "아이디: " << id << " 비밀번호: " << pw << " 이름: " << name << " 전화번호: " << phone << endl;
+            cout << "아이디: " << sql_row[0] << " 비밀번호: " << sql_row[1] << " 이름: " << sql_row[2] << " 전화번호: " << sql_row[3] << endl;
         }
     }
 }

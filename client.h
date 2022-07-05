@@ -2,17 +2,18 @@
 #define __CLIENT_H__
 
 #include <iostream>
+#include <string>
 #include "database.h"
 using namespace std;
 
 class member : public Database
 {
 protected:
-    string id;
-    string pw;
-    string name;
-    string phone;
-    string query;
+    char id[30];
+    char pw[30];
+    char name[30];
+    char phone[30];
+    char query[200];
 
 public:
     static string ID;
@@ -25,8 +26,8 @@ public:
     void member::read_tourinfo_area();  // 여행정보 지역이름으로 열람
     void member::read_tourinfo_beach(); // 여행정보 해변명으로 열람
     void member::read_tourinfo_road();  // 여행정보 도로명으로 열람
-}
+};
 
-string Member::ID;
+string member::ID;
 
 #endif

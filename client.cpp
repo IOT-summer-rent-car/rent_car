@@ -1,7 +1,7 @@
 #include "database.h"
 #include "client.h"
 #include <iostream>
-#include <cstring>
+#include <string>
 using namespace std;
 
 void member::login() // 로그인
@@ -11,7 +11,7 @@ void member::login() // 로그인
     cin >> id;
     cout << "비밀번호를 입력해주세요." << endl;
     cin >> pw;
-    sprintf(query, "select count(*) from usertbl where id = '%s'", id.c_str()); // 입력한 id가 유저테이블에 있는지 확인
+    sprintf(query, "select count(*) from usertbl where id = '%s'", id); // 입력한 id가 유저테이블에 있는지 확인
     send_query(query);
     sql_result = mysql_store_result(connection);
     sql_row = mysql_fetch_row(sql_result);
@@ -21,7 +21,7 @@ void member::login() // 로그인
     }
     else
     {
-        sprintf(query, "select count(*) from usertbl where id = '%s' and pw = '%s'", id.c_str(), pw.c_str()); // 입력한 id와 pw가 유저테이블에 있는지 확인
+        sprintf(query, "select count(*) from usertbl where id = '%s' and pw = '%s'", id, pw); // 입력한 id와 pw가 유저테이블에 있는지 확인
         send_query(query);
         sql_result = mysql_store_result(connection);
         sql_row = mysql_fetch_row(sql_result);
@@ -44,7 +44,7 @@ void member::find_id() // 아이디 찾기
     cin >> name;
     cout << "전화번호를 입력해주세요." << endl;
     cin >> phone;
-    sprintf(query, "select count(*) from usertbl where name = '%s'", name.c_str()); // 입력한 이름이 유저테이블에 있는지 확인
+    sprintf(query, "select count(*) from usertbl where name = '%s'", name); // 입력한 이름이 유저테이블에 있는지 확인
     send_query(query);
     sql_result = mysql_store_result(connection);
     sql_row = mysql_fetch_row(sql_result);
@@ -54,7 +54,7 @@ void member::find_id() // 아이디 찾기
     }
     else
     {
-        sprintf(query, "select count(*) from usertbl where name = '%s' and phone = '%s'", name.c_str(), phone.c_str()); // 입력한 이름과 전화번호가 유저테이블에 있는지 확인
+        sprintf(query, "select count(*) from usertbl where name = '%s' and phone = '%s'", name, phone); // 입력한 이름과 전화번호가 유저테이블에 있는지 확인
         send_query(query);
         sql_result = mysql_store_result(connection);
         sql_row = mysql_fetch_row(sql_result);
@@ -64,7 +64,7 @@ void member::find_id() // 아이디 찾기
         }
         else
         {
-            sprintf(query, "select id from usertbl where name = '%s' and phone = '%s'", name.c_str(), phone.c_str()); // 유저테이블에서 이름과 전화번호에 해당하는 id 가져옴
+            sprintf(query, "select id from usertbl where name = '%s' and phone = '%s'", name, phone); // 유저테이블에서 이름과 전화번호에 해당하는 id 가져옴
             send_query(query);
             sql_result = mysql_store_result(connection);
             sql_row = mysql_fetch_row(sql_result);
@@ -80,7 +80,7 @@ void member::find_pw() // 비밀번호 찾기
     cin >> id;
     cout << "전화번호를 입력해주세요." << endl;
     cin >> phone;
-    sprintf(query, "select count(*) from usertbl where id = '%s'", id.c_str()); // 입력한 id가 유저테이블에 있는지 확인
+    sprintf(query, "select count(*) from usertbl where id = '%s'", id); // 입력한 id가 유저테이블에 있는지 확인
     send_query(query);
     sql_result = mysql_store_result(connection);
     sql_row = mysql_fetch_row(sql_result);
@@ -90,7 +90,7 @@ void member::find_pw() // 비밀번호 찾기
     }
     else
     {
-        sprintf(query, "select count(*) from usertbl where id = '%s' and phone = '%s'", id.c_str(), phone.c_str()); // 입력한 id와 전화번호가 유저테이블에 있는지 확인
+        sprintf(query, "select count(*) from usertbl where id = '%s' and phone = '%s'", id, phone); // 입력한 id와 전화번호가 유저테이블에 있는지 확인
         send_query(query);
         sql_result = mysql_store_result(connection);
         sql_row = mysql_fetch_row(sql_result);
@@ -100,7 +100,7 @@ void member::find_pw() // 비밀번호 찾기
         }
         else
         {
-            sprintf(query, "select pw from usertbl where id = '%s' and phone = '%s'", id.c_str(), phone.c_str()); // 유저테이블에서 id와 전화번호에 해당하는 pw 가져옴
+            sprintf(query, "select pw from usertbl where id = '%s' and phone = '%s'", id, phone); // 유저테이블에서 id와 전화번호에 해당하는 pw 가져옴
             send_query(query);
             sql_result = mysql_store_result(connection);
             sql_row = mysql_fetch_row(sql_result);
@@ -114,7 +114,7 @@ void member::sign_up() // 회원가입
     cout << "회원가입" << endl;
     cout << "아이디를 입력해주세요." << endl;
     cin >> id;
-    sprintf(query, "select count(*) from usertbl where id = '%s'", id.c_str()); // 유저테이블에서 해당하는 id가 있는지 검색
+    sprintf(query, "select count(*) from usertbl where id = '%s'", id); // 유저테이블에서 해당하는 id가 있는지 검색
     send_query(query);
     sql_result = mysql_store_result(connection);
     sql_row = mysql_fetch_row(sql_result);
@@ -130,28 +130,28 @@ void member::sign_up() // 회원가입
         cin >> name;
         cout << "전화번호를 입력해주세요." << endl;
         cin >> phone;
-        sprintf(query, "insert into usertbl(id, pw, name, phone) values('%s', '%s', '%s', '%s')", id.c_str(), pw.c_str(), name.c_str(), phone.c_str()); // 입력받은 정보로 유저테이블에 등록
+        sprintf(query, "insert into usertbl(id, pw, name, phone) values('%s', '%s', '%s', '%s')", id, pw, name, phone); // 입력받은 정보로 유저테이블에 등록
         send_query(query);
         cout << "회원가입이 완료되었습니다." << endl;
     }
 }
 
-void change_pw() // 비밀번호 변경
+void member::change_pw() // 비밀번호 변경
 {
     cout << "비밀번호 변경" << endl;
     cout << "변경할 비밀번호를 입력해주세요." << endl;
     cin >> pw;
-    sprintf(query, "update usertbl set pw = '%s' where id = '%s'", pw.c_str(), ID.c_str()); // 로그인한 아이디에 해당하는 비밀번호 변경
+    sprintf(query, "update usertbl set pw = '%s' where id = '%s'", pw, ID.c_str()); // 로그인한 아이디에 해당하는 비밀번호 변경
     send_query(query);
     cout << "비밀번호가 " << pw << "로 변경되었습니다." << endl;
 }
 
-void change_phone() // 전화번호 변경
+void member::change_phone() // 전화번호 변경
 {
     cout << "번호 변경" << endl;
     cout << "변경할 번호를 입력해주세요." << endl;
     cin >> phone;
-    sprintf(query, "update usertbl set phone = '%s' where id = '%s'", phone.c_str(), ID.c_str()); // 로그인한 아이디에 해당하는 전화번호 변경
+    sprintf(query, "update usertbl set phone = '%s' where id = '%s'", phone, ID.c_str()); // 로그인한 아이디에 해당하는 전화번호 변경
     send_query(query);
     cout << "전화번호가 " << phone << "로 변경되었습니다." << endl;
 }
@@ -187,7 +187,7 @@ void member::read_tourinfo_beach() // 여행정보 해변명으로 열람
     string beach;
     cout << "해변명으로 여행정보 검색" << endl;
     cout << "해변명을 입력해주세요." << endl;
-    cin >> area;
+    cin >> beach;
     sprintf(query, "select count(*) from tourist where 해변명 like '%%%s%%'", beach.c_str()); // 입력한 해변명에 해당하는 정보가 있는지 검색
     send_query(query);
     sql_result = mysql_store_result(connection);
