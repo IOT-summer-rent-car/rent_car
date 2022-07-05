@@ -8,6 +8,7 @@ void manage::read_member() // 준회원 정보 열람
     sprintf(query, "select count(*) from usertbl where vip != 'vip'"); // 유저테이블에서 준회원이 있는지 검색
     send_query(query);
     sql_result = mysql_store_result(connection);
+    sql_row = mysql_fetch_row(sql_result);
     if (*sql_row[0] == '0') // 정보가 없을 경우
     {
         cout << "등록된 준회원이 없습니다." << endl;
@@ -31,6 +32,7 @@ void manage::read_vipmember() // vip회원 정보 열람
     sprintf(query, "select count(*) from usertbl where vip = 'vip'"); // 유저테이블에서 vip회원이 있는지 검색
     send_query(query);
     sql_result = mysql_store_result(connection);
+    sql_row = mysql_fetch_row(sql_result);
     if (*sql_row[0] == '0') // 정보가 없을 경우
     {
         cout << "등록된 준회원이 없습니다." << endl;
@@ -59,6 +61,7 @@ void manage::read_reserve_tour() // 관광지 예약현황 열람
     sprintf(query, "select count(*) from reservetbl"); // 예약테이블 모두 가져옴
     send_query(query);
     sql_result = mysql_store_result(connection);
+    sql_row = mysql_fetch_row(sql_result);
     if (*sql_row[0] == '0') // 정보가 없을 경우
     {
         cout << "예약된 내역이 없습니다." << endl;
@@ -82,6 +85,7 @@ void manage::read_order_guide() // 가이드 요청유무 열람
     sprintf(query, "select count(*) from usertbl where guide = '가이드요청"); // 유저테이블에서 가이드요청한 사람검색
     send_query(query);
     sql_result = mysql_store_result(connection);
+    sql_row = mysql_fetch_row(sql_result);
     if (*sql_row[0] == '0') // 정보가 없을 경우
     {
         cout << "가이드 요청내역이 없습니다." << endl;

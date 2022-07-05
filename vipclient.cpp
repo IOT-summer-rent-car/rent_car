@@ -38,6 +38,8 @@ void member::read_tourinfo_area() // 여행정보 지역이름으로 열람 및 
         cin >> area;
         sprintf(query, "select count(*) from tourist where 해변명 = '%s'", area.c_str()); // 입력한 해변명에 해당하는 관광지 검색
         send_query(query);
+        sql_result = mysql_store_result(connection);
+        sql_row = mysql_fetch_row(sql_result);
         if (*sql_row[0] == '0') // 해당하는 관광지가 존재하지 않을 경우
         {
             cout << "해당하는 관광지가 없습니다." << endl;
@@ -85,6 +87,8 @@ void member::read_tourinfo_beach() // 여행정보 해변명으로 열람 및 �
         cin >> beach;
         sprintf(query, "select count(*) from tourist where 해변명 = '%s'", beach.c_str()); // 입력한 해변명에 해당하는 관광지 검색
         send_query(query);
+        sql_result = mysql_store_result(connection);
+        sql_row = mysql_fetch_row(sql_result);
         if (*sql_row[0] == '0') // 해당하는 관광지가 존재하지 않을 경우
         {
             cout << "해당하는 관광지가 없습니다." << endl;
@@ -132,6 +136,8 @@ void member::read_tourinfo_road() // 여행정보 도로명으로 열람 및 예
         cin >> road;
         sprintf(query, "select count(*) from tourist where 해변명 = '%s'", road.c_str()); // 입력한 해변명에 해당하는 관광지 검색
         send_query(query);
+        sql_result = mysql_store_result(connection);
+        sql_row = mysql_fetch_row(sql_result);
         if (*sql_row[0] == '0') // 해당하는 관광지가 존재하지 않을 경우
         {
             cout << "해당하는 관광지가 없습니다." << endl;
