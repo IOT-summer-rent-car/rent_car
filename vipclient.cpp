@@ -1,7 +1,7 @@
 #include "database.h"
 #include "client.h"
 #include "vipclient.h"
-#include <string><
+#include <string>
 using namespace std;
 
 void member::read_tourinfo_area() // 여행정보 지역이름으로 열람 및 예약

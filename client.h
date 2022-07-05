@@ -23,11 +23,9 @@ public:
     void sign_up();                     // 회원가입
     void change_pw();                   // 비밀번호 변경
     void change_phone();                // 전화번호 변경
-    void member::read_tourinfo_area();  // 여행정보 지역이름으로 열람
-    void member::read_tourinfo_beach(); // 여행정보 해변명으로 열람
-    void member::read_tourinfo_road();  // 여행정보 도로명으로 열람
+    void read_tourinfo_area();  // 여행정보 지역이름으로 열람
+    void read_tourinfo_beach(); // 여행정보 해변명으로 열람
+    void read_tourinfo_road();  // 여행정보 도로명으로 열람
 };
-
-string member::ID;
 
 #endif

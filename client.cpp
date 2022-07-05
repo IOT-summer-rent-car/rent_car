@@ -4,6 +4,8 @@
 #include <string>
 using namespace std;
 
+string member::ID;
+
 void member::login() // 로그인
 {
     cout << "로그인" << endl;
