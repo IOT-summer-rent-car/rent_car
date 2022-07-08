@@ -68,7 +68,8 @@ void signup::on_pushButton_2_clicked()
     {
         QSqlQuery query; // 쿼리문을 실행하기 위한 변수
         QString SQL; // 쿼리문을 넣기 위한 QString 변수 선언
-        SQL="insert into userTB values ('"+ui->lineEdit->text()+"', '"+ui->lineEdit_2->text()+"', '"+ui->lineEdit_4->text()+"')"; // 쿼리문
+        SQL="insert into userTB values ('"+ui->lineEdit->text()+"', '"+ui->lineEdit_2->text()+"', '"+ui->lineEdit_4->text()+"', 'vip')"; // 쿼리문
+        QMessageBox::information(nullptr,"Succsefull","VIP회원님 환영합니다.");
         qDebug()<<SQL<<endl; // 쿼리문 확인용 출력문
         query.exec(SQL);  // 쿼리문 실행
         qDebug()<<"회원가입 완료"<<endl;

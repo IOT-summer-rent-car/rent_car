@@ -43,12 +43,22 @@ void MainWindow::on_lineEdit_2_returnPressed() // 사용자가 lineedit에서 en
         }
         else
         {
-            ui->label_3->setText("로그인 성공.");
-            this->close();
-            menu userWindow(id); // 객체 생성
-            userWindow.setModal(true); // 정보찾기창 열기
-            userWindow.exec(); // 정보찾기창 닫으면
-            this->show(); // 기존에 열렸던 창 다시 열기
+            SQL="select userRating FROM userTB WHERE userId = '"+id+"' and userPw = '"+pw+"'"; // 쿼리문
+            qDebug()<<SQL<<endl; // 쿼리문 확인용 출력문
+            query.exec(SQL);  // 쿼리문 실행
+            query.next(); // 쿼리문 실행결과 확인
+            if(query.value(0).toString() == "vip")
+            {
+                QMessageBox::information(nullptr,"Succsefull","VIP회원님 환영합니다.");
+                ui->label_3->setText("로그인 성공.");
+                this->close();
+                menu userWindow(id); // 객체 생성
+                userWindow.setModal(true); // 정보찾기창 열기
+                userWindow.exec(); // 정보찾기창 닫으면
+                this->show(); // 기존에 열렸던 창 다시 열기
+            }
+            else
+                QMessageBox::information(nullptr,"Succsefull","VIP회원만 접속할 수 있습니다.");
         }
     }
 }
