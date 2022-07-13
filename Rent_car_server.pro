@@ -25,6 +25,7 @@ SOURCES += \
     main_page.cpp \
     reserv.cpp \
     set_car.cpp \
+    thread.cpp \
     travel.cpp \
     user_info.cpp
 
@@ -39,6 +40,7 @@ HEADERS += \
     main_page.h \
     reserv.h \
     set_car.h \
+    thread.h \
     travel.h \
     user_info.h
 

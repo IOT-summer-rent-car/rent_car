@@ -6,49 +6,47 @@ Chat::Chat(QWidget *parent) :
     ui(new Ui::Chat)
 {
     ui->setupUi(this);
+    start_chat_date = QDateTime::currentDateTime().toString();
+    thread = new Thread(sock);
+    thread->start();
+    std::string ser = "서버";
 
-    sock = c.sock;
-    qDebug()<<sock;
+    write(sock, (void *)ser.c_str(), sizeof(ser));
 
-    call_thread();
+    connect(thread, SIGNAL(Send(QString)), this, SLOT(Receive(QString)));
 }
-
-void Chat::call_thread()
-{
-    std::thread recv = std::thread([&]{recv_thread();});
-    recv.join();
-}
-
 Chat::~Chat()
 {
     delete ui;
 }
 
-void Chat::recv_thread()
+void Chat::Receive(QString recv_msg)
 {
-    qDebug()<<"ㅎㅇ";
-    char msg[BUF_SIZE];
-    while(1)
-    {
-
-        std::cout<<msg<<std::endl;
-        QString recv_msg = QString::fromStdString(msg);
-        if(recv_msg.length() >=1)
-        {
-            ui->list->append(recv_msg);
-        }
-    }
-    qDebug()<<"ㅎㅇ";
-};
+    ui->list->append(recv_msg);
+}
 
 void Chat::on_send_btn_clicked()
 {
     std::string send_msg = ui->chat->text().toStdString();
-    write(sock, send_msg.c_str(), sizeof(send_msg));
+    send_msg = "[서버] "+send_msg;
+    send(sock, (void *)send_msg.c_str(), send_msg.size(),0);
     ui->chat->clear();
 }
 
 void Chat::closeEvent(QCloseEvent *)
 {
+    shutdown(sock,SHUT_RDWR);
+    QString now = start_chat_date +" ~ "+QDateTime::currentDateTime().toString();
+    QString text = ui->list->toPlainText();
 
+    if(text != "")
+    {
+        query.prepare("INSERT INTO chat_log(date,log) "
+                      "VALUES (?, ?)");
+
+        query.addBindValue(now);
+        query.addBindValue(text);
+
+        query.exec();
+    }
 }
