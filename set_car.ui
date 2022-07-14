@@ -34,21 +34,31 @@
   <widget class="QPushButton" name="add">
    <property name="geometry">
     <rect>
-     <x>610</x>
+     <x>600</x>
      <y>40</y>
-     <width>89</width>
-     <height>25</height>
+     <width>111</width>
+     <height>61</height>
     </rect>
    </property>
    <property name="text">
-    <string>차량 추가</string>
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/new/image/image/car.png</normaloff>:/new/image/image/car.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>111</width>
+     <height>61</height>
+    </size>
    </property>
   </widget>
   <widget class="QLineEdit" name="name">
    <property name="geometry">
     <rect>
      <x>600</x>
-     <y>120</y>
+     <y>160</y>
      <width>113</width>
      <height>25</height>
     </rect>
@@ -58,7 +68,7 @@
    <property name="geometry">
     <rect>
      <x>600</x>
-     <y>170</y>
+     <y>210</y>
      <width>113</width>
      <height>25</height>
     </rect>
@@ -68,7 +78,7 @@
    <property name="geometry">
     <rect>
      <x>600</x>
-     <y>220</y>
+     <y>260</y>
      <width>113</width>
      <height>25</height>
     </rect>
@@ -78,7 +88,7 @@
    <property name="geometry">
     <rect>
      <x>600</x>
-     <y>270</y>
+     <y>310</y>
      <width>113</width>
      <height>25</height>
     </rect>
@@ -87,27 +97,47 @@
   <widget class="QPushButton" name="remove">
    <property name="geometry">
     <rect>
-     <x>610</x>
-     <y>520</y>
-     <width>89</width>
-     <height>25</height>
+     <x>600</x>
+     <y>480</y>
+     <width>111</width>
+     <height>61</height>
     </rect>
    </property>
    <property name="text">
     <string>삭제</string>
+   </property>
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/new/image/image/delete.png</normaloff>:/new/image/image/delete.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>50</width>
+     <height>50</height>
+    </size>
    </property>
   </widget>
   <widget class="QPushButton" name="fix">
    <property name="geometry">
     <rect>
      <x>600</x>
-     <y>320</y>
+     <y>360</y>
      <width>111</width>
      <height>61</height>
     </rect>
    </property>
    <property name="text">
     <string>수정</string>
+   </property>
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/new/image/image/correction.png</normaloff>:/new/image/image/correction.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>50</width>
+     <height>50</height>
+    </size>
    </property>
   </widget>
   <widget class="QTableWidget" name="list">
@@ -154,6 +184,104 @@
     </property>
    </column>
   </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>891</width>
+     <height>601</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="image.qrc">:/new/image/image/cars_background.jpg</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>625</x>
+     <y>100</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>차량 추가</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>600</x>
+     <y>140</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Name</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>600</x>
+     <y>190</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Kind</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>600</x>
+     <y>240</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Data</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>600</x>
+     <y>290</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Price</string>
+   </property>
+  </widget>
+  <zorder>label</zorder>
+  <zorder>add</zorder>
+  <zorder>name</zorder>
+  <zorder>kind</zorder>
+  <zorder>data</zorder>
+  <zorder>price</zorder>
+  <zorder>remove</zorder>
+  <zorder>fix</zorder>
+  <zorder>list</zorder>
+  <zorder>label_2</zorder>
+  <zorder>label_3</zorder>
+  <zorder>label_4</zorder>
+  <zorder>label_5</zorder>
+  <zorder>label_6</zorder>
  </widget>
  <tabstops>
   <tabstop>name</tabstop>
@@ -165,6 +293,8 @@
   <tabstop>list</tabstop>
   <tabstop>add</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="image.qrc"/>
+ </resources>
  <connections/>
 </ui>

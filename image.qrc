@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/new/image">
+        <file>image/chat.png</file>
+        <file>image/user.png</file>
+        <file>image/island.png</file>
+        <file>image/car.png</file>
+        <file>image/rental.png</file>
+        <file>image/car top.png</file>
+        <file>image/cars_background.jpg</file>
+        <file>image/correction.png</file>
+        <file>image/delete.png</file>
+    </qresource>
+    <qresource prefix="/new/background">
+        <file>image/background.png</file>
+        <file>image/background car.png</file>
+        <file>image/beach.png</file>
+    </qresource>
+</RCC>

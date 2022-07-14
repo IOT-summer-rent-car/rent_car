@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>140</width>
-    <height>295</height>
+    <width>135</width>
+    <height>259</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -27,13 +27,17 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>220</y>
+     <y>210</y>
      <width>111</width>
      <height>41</height>
     </rect>
    </property>
    <property name="text">
     <string>추가</string>
+   </property>
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/new/image/image/correction.png</normaloff>:/new/image/image/correction.png</iconset>
    </property>
   </widget>
   <widget class="QLineEdit" name="kind">
@@ -66,6 +70,84 @@
     </rect>
    </property>
   </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>0</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Name</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>50</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Kind</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>100</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Data</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>150</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Price</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>141</width>
+     <height>271</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(195, 236, 255);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <zorder>label_5</zorder>
+  <zorder>price</zorder>
+  <zorder>add</zorder>
+  <zorder>kind</zorder>
+  <zorder>data</zorder>
+  <zorder>name</zorder>
+  <zorder>label</zorder>
+  <zorder>label_2</zorder>
+  <zorder>label_3</zorder>
+  <zorder>label_4</zorder>
  </widget>
  <tabstops>
   <tabstop>name</tabstop>
@@ -74,6 +156,8 @@
   <tabstop>price</tabstop>
   <tabstop>add</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="image.qrc"/>
+ </resources>
  <connections/>
 </ui>

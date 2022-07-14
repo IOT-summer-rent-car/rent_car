@@ -66,6 +66,10 @@
    <property name="text">
     <string>삭제</string>
    </property>
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/new/image/image/delete.png</normaloff>:/new/image/image/delete.png</iconset>
+   </property>
   </widget>
   <widget class="QLineEdit" name="name">
    <property name="geometry">
@@ -99,12 +103,16 @@
    <property name="text">
     <string>수정</string>
    </property>
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/new/image/image/correction.png</normaloff>:/new/image/image/correction.png</iconset>
+   </property>
   </widget>
   <widget class="QPushButton" name="add_btn">
    <property name="geometry">
     <rect>
      <x>660</x>
-     <y>10</y>
+     <y>20</y>
      <width>89</width>
      <height>25</height>
     </rect>
@@ -113,6 +121,60 @@
     <string>신규등록</string>
    </property>
   </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>801</width>
+     <height>601</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="image.qrc">:/new/background/image/beach.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>530</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Address</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>530</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Name</string>
+   </property>
+  </widget>
+  <zorder>label</zorder>
+  <zorder>list</zorder>
+  <zorder>remove_btn</zorder>
+  <zorder>name</zorder>
+  <zorder>addr</zorder>
+  <zorder>fix_btn</zorder>
+  <zorder>add_btn</zorder>
+  <zorder>label_5</zorder>
+  <zorder>label_6</zorder>
  </widget>
  <tabstops>
   <tabstop>name</tabstop>
@@ -122,6 +184,8 @@
   <tabstop>list</tabstop>
   <tabstop>add_btn</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="image.qrc"/>
+ </resources>
  <connections/>
 </ui>

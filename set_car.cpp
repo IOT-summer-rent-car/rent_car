@@ -18,7 +18,7 @@ void set_car::refresh()
 {
     ui->list->clear();
     int line=0;
-    QStringList head= {"Name","Kind","Data","Price","Rent"};
+    QStringList head= {"Name","Kind","Data","Rent","Price"};
     ui->list->setHorizontalHeaderLabels(head);
     query_string = "SELECT * FROM cars ORDER BY price";
     query.exec(QString::fromStdString(query_string));

@@ -35,6 +35,7 @@ void Chat::on_send_btn_clicked()
 
 void Chat::closeEvent(QCloseEvent *)
 {
+    thread->terminate();
     shutdown(sock,SHUT_RDWR);
     QString now = start_chat_date +" ~ "+QDateTime::currentDateTime().toString();
     QString text = ui->list->toPlainText();

@@ -28,19 +28,19 @@
   <widget class="QTextBrowser" name="list">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>771</width>
-     <height>531</height>
+     <x>30</x>
+     <y>30</y>
+     <width>721</width>
+     <height>481</height>
     </rect>
    </property>
   </widget>
   <widget class="QLineEdit" name="chat">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>560</y>
-     <width>671</width>
+     <x>30</x>
+     <y>530</y>
+     <width>621</width>
      <height>25</height>
     </rect>
    </property>
@@ -48,8 +48,8 @@
   <widget class="QPushButton" name="send_btn">
    <property name="geometry">
     <rect>
-     <x>690</x>
-     <y>560</y>
+     <x>660</x>
+     <y>530</y>
      <width>89</width>
      <height>25</height>
     </rect>
@@ -57,8 +57,34 @@
    <property name="text">
     <string>입력</string>
    </property>
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/new/image/image/chat.png</normaloff>:/new/image/image/chat.png</iconset>
+   </property>
   </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>801</width>
+     <height>601</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(195, 236, 255);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <zorder>label</zorder>
+  <zorder>list</zorder>
+  <zorder>chat</zorder>
+  <zorder>send_btn</zorder>
  </widget>
- <resources/>
+ <resources>
+  <include location="image.qrc"/>
+ </resources>
  <connections/>
 </ui>
