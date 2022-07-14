@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Add New Travel</string>
   </property>
   <widget class="QPushButton" name="add_Btn">
    <property name="geometry">

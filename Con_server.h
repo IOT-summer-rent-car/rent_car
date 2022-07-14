@@ -21,7 +21,7 @@ public:
         memset(&serv_addr, 0, sizeof(serv_addr));
         serv_addr.sin_family = AF_INET;
         serv_addr.sin_addr.s_addr = inet_addr("10.10.20.232");
-        serv_addr.sin_port = htons(atoi("9030"));
+        serv_addr.sin_port = htons(atoi("9036"));
 
         if (connect(sock, (struct sockaddr *)&serv_addr, sizeof(serv_addr)) == -1)
             qDebug()<<"con_error";

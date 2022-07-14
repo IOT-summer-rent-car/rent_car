@@ -23,7 +23,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Change VIP</string>
   </property>
   <widget class="QListWidget" name="list">
    <property name="geometry">

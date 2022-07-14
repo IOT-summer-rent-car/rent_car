@@ -17,12 +17,13 @@ void Add_new_car::on_add_clicked()
 {
     if(ui->name->text() != "")
     {
-        query.prepare("INSERT INTO cars(name,kind,data,price) "
-                      "VALUES (?, ?, ?, ?)");
+        query.prepare("INSERT INTO cars(name,kind,data,rent,price) "
+                      "VALUES (?, ?, ?, ? ,?)");
 
         query.addBindValue(ui->name->text());
         query.addBindValue(ui->kind->text());
         query.addBindValue(ui->data->text());
+        query.addBindValue("X");
         query.addBindValue(ui->price->text());
         query.exec();
 
